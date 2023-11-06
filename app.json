@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "brain",
+    "slug": "brain",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "brain"
+}
