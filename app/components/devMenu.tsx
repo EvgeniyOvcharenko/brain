@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import { themeColors } from "../styles/theme/theme";
 import { useGetCustomTheme } from "../styles/theme/hooks";
+import { ThemeType } from "../types/themeTypes";
 
 const CONTENT_WIDTH = 235;
 const SID_BUTTON_WIDTH = 18;
@@ -23,7 +24,7 @@ const DevMenu: FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const isRTL = I18nManager.isRTL;
-  const isDark = currentTheme === "dark";
+  const isDark = currentTheme === ThemeType.DARK;
 
   const toggle = () => {
     Animated.timing(animValue, {
@@ -74,7 +75,7 @@ const DevMenu: FC = () => {
           ]}
         >
           <Text
-            style={{ color: isDark ? themeColors.white : themeColors.dark }}
+            style={{ color: isDark ? themeColors.white : themeColors.darkGrey }}
           >
             {currentTheme.toUpperCase()}
           </Text>

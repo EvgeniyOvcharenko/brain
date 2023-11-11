@@ -1,20 +1,49 @@
-import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import {
+  MaterialTopTabScreenProps,
+  createMaterialTopTabNavigator,
+} from "@react-navigation/material-top-tabs";
 import React from "react";
-import { Home } from "../containers/home/home";
-import { Settings } from "../containers/home/settings";
+import { GameHome } from "../containers/main/gameHome";
+import { SettingsHome } from "../containers/main/settingsHome";
+import { homeTabBarOptions } from "./headerOptions";
+import { LevelsHome } from "../containers/main/levelsHome";
 
 type HomeRoutesParams = {
-  Home: undefined;
-  Settings: undefined;
+  GameHome: undefined;
+  SettingsHome: undefined;
+  LevelsHome: undefined;
 };
 
 const HomeStack = createMaterialTopTabNavigator<HomeRoutesParams>();
 
-export const HomeRoutes = () => {
+export type HomeStackProps = MaterialTopTabScreenProps<HomeRoutesParams>;
+export const MainRoutes = () => {
   return (
-    <HomeStack.Navigator>
-      <HomeStack.Screen name="Home" component={Home} />
-      <HomeStack.Screen name="Settings" component={Settings} />
+    <HomeStack.Navigator
+      initialRouteName="GameHome"
+      screenOptions={homeTabBarOptions}
+    >
+      <HomeStack.Screen
+        name="SettingsHome"
+        component={SettingsHome}
+        options={{
+          title: "Settings",
+        }}
+      />
+      <HomeStack.Screen
+        name="GameHome"
+        component={GameHome}
+        options={{
+          title: "Game",
+        }}
+      />
+      <HomeStack.Screen
+        name="LevelsHome"
+        component={LevelsHome}
+        options={{
+          title: "Levels",
+        }}
+      />
     </HomeStack.Navigator>
   );
 };
