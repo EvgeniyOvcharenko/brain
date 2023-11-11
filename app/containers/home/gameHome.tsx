@@ -5,7 +5,7 @@ import { TextElement } from "../../components/textElement/textElement";
 export const GameHome = () => {
   return (
     <View>
-      <TextElement colorVariant="orange" variant="h1">
+      <TextElement colorVariant='primary' variant="h1">
       Game
       </TextElement>
     </View>

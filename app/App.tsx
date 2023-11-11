@@ -10,7 +10,8 @@ import DevMenu from "./components/devMenu";
 import { DarkTheme, WhiteTheme } from "./styles/theme/navigationTheme";
 import { ThemeType } from "./types/themeTypes";
 import {Icon} from "./components/icon/icon";
-import { themeColors } from "./styles/theme/theme";
+import { themeApp, themeColors } from "./styles/theme/theme";
+import { ThemeProvider } from "styled-components/native";
 
 type ICurrentTheme = IThemeContext["currentTheme"];
 export const App = () => {
@@ -44,6 +45,7 @@ export const App = () => {
   return (
     <SafeAreaProvider>
       <ThemePreferenceContext.Provider value={{ currentTheme, toggleTheme }}>
+      <ThemeProvider theme={themeApp[currentTheme]}>
         <NavigationContainer
           theme={currentTheme === ThemeType.LIGHT ? WhiteTheme : DarkTheme}
         >
@@ -51,7 +53,7 @@ export const App = () => {
             screenOptions={{
               headerShadowVisible: false,
               headerTitle: () => {
-                return <Icon name="logoBrain" size={32} color={themeColors.blue} />;
+                return <Icon name="logoBrain" size={36} color={themeColors.blue} />;
               },
             }}
           >
@@ -59,6 +61,7 @@ export const App = () => {
           </Stack.Navigator>
         </NavigationContainer>
         <DevMenu />
+      </ThemeProvider>
       </ThemePreferenceContext.Provider>
     </SafeAreaProvider>
   );
