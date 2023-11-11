@@ -4,10 +4,10 @@ import { themeColors } from './theme';
 export const WhiteTheme: Theme = {
   dark: false,
   colors: {
-    primary: themeColors.ink,
+    primary: themeColors.darkGrey,
     background: themeColors.white,
     card: themeColors.white,
-    text: themeColors.ink,
+    text: themeColors.darkGrey,
     border: themeColors.white,
     notification: themeColors.orange,
   },
@@ -17,10 +17,10 @@ export const DarkTheme: Theme = {
   dark: true,
   colors: {
     primary: themeColors.white,
-    background: themeColors.ink,
-    card: themeColors.ink,
+    background: themeColors.darkGrey,
+    card: themeColors.darkGrey,
     text: themeColors.white,
-    border: themeColors.ink,
+    border: themeColors.darkGrey,
     notification: themeColors.orange,
   },
 };

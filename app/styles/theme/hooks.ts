@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
+import { ThemeType } from '../../types/themeTypes';
 
 export interface IThemeContext {
-  currentTheme: 'light' | 'dark';
+  currentTheme: ThemeType;
   toggleTheme?: () => void;
 }
 export const ThemePreferenceContext = React.createContext<IThemeContext>({
-  currentTheme: 'light',
+  currentTheme: ThemeType.LIGHT,
   toggleTheme: () => null,
 });
 
