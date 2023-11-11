@@ -3,10 +3,10 @@ import {
   createMaterialTopTabNavigator,
 } from "@react-navigation/material-top-tabs";
 import React from "react";
-import { GameHome } from "../containers/main/gameHome";
-import { SettingsHome } from "../containers/main/settingsHome";
+import { GameHome } from "../containers/home/gameHome";
+import { SettingsHome } from "../containers/home/settingsHome";
 import { homeTabBarOptions } from "./headerOptions";
-import { LevelsHome } from "../containers/main/levelsHome";
+import { LevelsHome } from "../containers/home/levelsHome";
 
 type HomeRoutesParams = {
   GameHome: undefined;
