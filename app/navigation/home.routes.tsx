@@ -7,6 +7,7 @@ import { GameHome } from "../containers/home/gameHome";
 import { SettingsHome } from "../containers/home/settingsHome";
 import { homeTabBarOptions } from "./headerOptions";
 import { LevelsHome } from "../containers/home/levelsHome";
+import { useTheme } from "styled-components/native";
 
 type HomeRoutesParams = {
   GameHome: undefined;
@@ -18,10 +19,11 @@ const HomeStack = createMaterialTopTabNavigator<HomeRoutesParams>();
 
 export type HomeStackProps = MaterialTopTabScreenProps<HomeRoutesParams>;
 export const MainRoutes = () => {
+  const theme = useTheme();
   return (
     <HomeStack.Navigator
       initialRouteName="GameHome"
-      screenOptions={homeTabBarOptions}
+      screenOptions={{...homeTabBarOptions(theme)}}
     >
       <HomeStack.Screen
         name="SettingsHome"

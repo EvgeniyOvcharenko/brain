@@ -11,7 +11,6 @@ interface IProps {
   name: TIconNames;
   size?: number;
   style?: StyleProp<TextStyle>;
-  pointerEvents?: 'none' | 'auto';
 }
 
 export const Icon = forwardRef<View, IProps>((props, ref) => {

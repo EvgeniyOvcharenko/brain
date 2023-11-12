@@ -15,6 +15,7 @@ export interface IMyTheme {
       secondary: string;
       disabled: string;
       white: string;
+      blue: string;
     };
     layout: {
       page: string;
@@ -23,6 +24,10 @@ export interface IMyTheme {
     border: {
       border1: string;
       border2: string;
+    };
+    shimmer: {
+      first: string;
+      second: string;
     };
   };
   fonts: any;

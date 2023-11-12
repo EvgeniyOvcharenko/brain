@@ -7,12 +7,17 @@ export const themeColors = {
   lightGrey: "#d3d2d2",
   grey: "#a7a5a5",
   darkGrey: "#424242",
-  
-  orange: "#FA6428",
-  lightOrange: "#FEEFE9",
+
+  lightOrange: "#FFA600",
+  orange: "#FF8000",
+  darkOrange: "#FF6A00",
+
+  lightBlue: '#036EEE',
+  blue: "#0335EE",
+  darkBlue: "#001EC4",
+
   success: "#00AA5F",
   error: "#EC0B43",
-  blue: "#2997FF",
 };
 
 export const lightColors: IMyTheme["colors"] = {
@@ -22,10 +27,11 @@ export const lightColors: IMyTheme["colors"] = {
     disabled: themeColors.grey,
   },
   button: {
-    primary: themeColors.black,
-    secondary: themeColors.black,
+    primary: themeColors.black,//
+    secondary: themeColors.black,//
     disabled: themeColors.grey,
-    white: themeColors.black,
+    white: themeColors.white,
+    blue: themeColors.lightBlue,
   },
   layout: {
     page: themeColors.black,
@@ -34,6 +40,10 @@ export const lightColors: IMyTheme["colors"] = {
   border: {
     border1: themeColors.black,
     border2: themeColors.black,
+  },
+  shimmer: {
+    first: themeColors.lightOrange,
+    second: themeColors.orange,
   },
 };
 
@@ -44,10 +54,11 @@ export const darkColors: IMyTheme["colors"] = {
     disabled: themeColors.grey,
   },
   button: {
-    primary: themeColors.white,
-    secondary: themeColors.white,
+    primary: themeColors.white,//
+    secondary: themeColors.white,//
     disabled: themeColors.grey,
     white: themeColors.white,
+    blue: themeColors.blue,
   },
   layout: {
     page: themeColors.white,
@@ -56,6 +67,10 @@ export const darkColors: IMyTheme["colors"] = {
   border: {
     border1: themeColors.white,
     border2: themeColors.white,
+  },
+  shimmer: {
+    first: themeColors.orange,
+    second: themeColors.darkOrange,
   },
 };
 
