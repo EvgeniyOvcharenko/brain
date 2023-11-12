@@ -14,6 +14,7 @@ import { useGetCustomTheme } from "../styles/theme/hooks";
 import { ThemeType } from "../types/themeTypes";
 import { locales } from "../locales/localization";
 import { AppLanguages } from "../locales/constants";
+import { useTheme } from "styled-components";
 
 const CONTENT_WIDTH = 235;
 const SID_BUTTON_WIDTH = 18;
@@ -24,6 +25,7 @@ const DevMenu: FC = () => {
   const { currentTheme, toggleTheme } = useGetCustomTheme();
   const animValue = React.useRef(new Animated.ValueXY({ x: 0, y: 0 })).current;
   const [isOpen, setIsOpen] = useState(false);
+  const theme = useTheme();
 
   const isRTL = I18nManager.isRTL;
   const isDark = currentTheme === ThemeType.DARK;
@@ -53,7 +55,7 @@ const DevMenu: FC = () => {
           borderColor: "red",
           borderWidth: 2,
           padding: 10,
-          backgroundColor: themeColors.blue,
+          backgroundColor: theme.colors.button.blue,
         }}
         onPress={action}
       >

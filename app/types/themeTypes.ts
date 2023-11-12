@@ -32,5 +32,5 @@ export interface IMyTheme {
     };
   };
   fonts: any;
-  letterSpacings: (fontSize: number, percentage: number) => number;
+  letterSpacings?: (fontSize: number, percentage: number) => number;
 }

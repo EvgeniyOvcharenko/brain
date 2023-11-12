@@ -24,10 +24,15 @@ export interface ITextElementProps extends TextProps {
 
 export const TextElement = styled.Text<ITextElementProps>`
   text-align: left;
-  color: ${(props) => {
+  color: ${(props: {
+    color?: string;
+    colorVariant?: TextColorVariants;
+    disabled?: boolean;
+    theme: DefaultTheme;
+  }) => {
     return getTextColor(props);
   }};
-  ${(props) => {
+  ${(props: ITextElementProps) => {
     const {
       variant,
       fontSize,

@@ -1,4 +1,5 @@
-import { IMyTheme } from "../../types/themeTypes";
+import { DefaultTheme } from "styled-components/native";
+import { Fonts } from "../fonts/text.fonts";
 
 export const themeColors = {
   white: "#FFFFFF",
@@ -12,7 +13,7 @@ export const themeColors = {
   orange: "#FF8000",
   darkOrange: "#FF6A00",
 
-  lightBlue: '#036EEE',
+  lightBlue: "#036EEE",
   blue: "#0335EE",
   darkBlue: "#001EC4",
 
@@ -20,7 +21,7 @@ export const themeColors = {
   error: "#EC0B43",
 };
 
-export const lightColors: IMyTheme["colors"] = {
+export const lightColors: DefaultTheme["colors"] = {
   text: {
     primary: themeColors.black,
     secondary: themeColors.darkGrey,
@@ -28,8 +29,8 @@ export const lightColors: IMyTheme["colors"] = {
     reverse: themeColors.white,
   },
   button: {
-    primary: themeColors.black,//
-    secondary: themeColors.black,//
+    primary: themeColors.black, //
+    secondary: themeColors.black, //
     disabled: themeColors.grey,
     white: themeColors.white,
     blue: themeColors.lightBlue,
@@ -48,7 +49,7 @@ export const lightColors: IMyTheme["colors"] = {
   },
 };
 
-export const darkColors: IMyTheme["colors"] = {
+export const darkColors: DefaultTheme["colors"] = {
   text: {
     primary: themeColors.white,
     secondary: themeColors.lightGrey,
@@ -56,8 +57,8 @@ export const darkColors: IMyTheme["colors"] = {
     reverse: themeColors.black,
   },
   button: {
-    primary: themeColors.white,//
-    secondary: themeColors.white,//
+    primary: themeColors.white, //
+    secondary: themeColors.white, //
     disabled: themeColors.grey,
     white: themeColors.white,
     blue: themeColors.blue,
@@ -76,9 +77,16 @@ export const darkColors: IMyTheme["colors"] = {
   },
 };
 
-export const themeApp = {
-  light: { colors: lightColors },
-  dark: { colors: darkColors },
+const letterSpacing: DefaultTheme["letterSpacings"] = (
+  fontSize,
+  percentage
+) => {
+  return fontSize * percentage;
 };
 
-export type TextColorVariants = keyof IMyTheme["colors"]["text"];
+export const themeApp = {
+  light: { colors: lightColors, letterSpacing: letterSpacing, fonts: Fonts },
+  dark: { colors: darkColors, letterSpacing: letterSpacing, fonts: Fonts },
+};
+
+export type TextColorVariants = keyof DefaultTheme["colors"]["text"];
