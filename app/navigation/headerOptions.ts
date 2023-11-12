@@ -1,8 +1,8 @@
 import { MaterialTopTabNavigationOptions } from "@react-navigation/material-top-tabs";
 import { StyleSheet } from "react-native";
-import { IMyTheme } from "../types/themeTypes";
+import { DefaultTheme } from "styled-components/native";
 
-const styles = (theme: IMyTheme) =>
+const styles = (theme: DefaultTheme) =>
   StyleSheet.create({
     tabBarLabelStyle: {
       fontSize: 12,
@@ -26,7 +26,7 @@ const styles = (theme: IMyTheme) =>
   });
 
 export const homeTabBarOptions = (
-  theme: IMyTheme
+  theme: DefaultTheme
 ): MaterialTopTabNavigationOptions => {
   return {
     tabBarActiveTintColor: theme.colors.text.reverse,

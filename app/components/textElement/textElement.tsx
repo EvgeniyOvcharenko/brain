@@ -50,7 +50,7 @@ export const TextElement = styled.Text<ITextElementProps>`
       font-size: ${_fontSize};
       font-weight: ${fontWeight || 400};
       line-height: ${_lineHeight};
-      letter-spacing: ${_letterSpacing}px;
+      letter-spacing: ${_letterSpacing};
     `;
   }};
 `;

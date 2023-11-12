@@ -12,6 +12,8 @@ import {
 import { themeColors } from "../styles/theme/theme";
 import { useGetCustomTheme } from "../styles/theme/hooks";
 import { ThemeType } from "../types/themeTypes";
+import { locales } from "../locales/localization";
+import { AppLanguages } from "../locales/constants";
 
 const CONTENT_WIDTH = 235;
 const SID_BUTTON_WIDTH = 18;
@@ -36,6 +38,12 @@ const DevMenu: FC = () => {
 
   const hello = () => {
     Alert.alert("Hello");
+  };
+
+  const onChangeLanguage = () => {
+    const isEn = locales.getLanguage() === AppLanguages.EN;
+    locales.setLanguage(isEn ? AppLanguages.UA : AppLanguages.EN);
+    setIsOpen(true);
   };
 
   const renderButton = (action: () => void, text: string) => {
@@ -87,6 +95,7 @@ const DevMenu: FC = () => {
           />
         </View>
         {renderButton(hello, "Click me")}
+        {renderButton(onChangeLanguage, "Change language")}
       </View>
       <TouchableOpacity
         style={[
