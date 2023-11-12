@@ -1,5 +1,5 @@
+import { MaterialTopTabNavigationOptions } from "@react-navigation/material-top-tabs";
 import { StyleSheet } from "react-native";
-import { themeColors } from "../styles/theme/theme";
 import { IMyTheme } from "../types/themeTypes";
 
 const styles = (theme: IMyTheme) =>
@@ -9,7 +9,7 @@ const styles = (theme: IMyTheme) =>
       fontFamily: "Georgia-bold",
     },
     tabBarStyle: {
-      backgroundColor: "red",
+      backgroundColor: theme.colors.shimmer.first,
     },
     tabBarIndicatorStyle: {
       height: 0,
@@ -20,14 +20,18 @@ const styles = (theme: IMyTheme) =>
       borderTopRightRadius: 0,
       marginHorizontal: 8,
       backgroundColor: theme.colors.button.blue,
+      borderLeftColor: theme.colors.button.primary,
+      borderLeftWidth: 3,
     },
   });
 
-export const homeTabBarOptions = (theme: IMyTheme) => {
+export const homeTabBarOptions = (
+  theme: IMyTheme
+): MaterialTopTabNavigationOptions => {
   return {
-    tabBarActiveTintColor: themeColors.white,
+    tabBarActiveTintColor: theme.colors.text.reverse,
     tabBarPressOpacity: 0.8,
-    tabBarInactiveTintColor: themeColors.lightGrey,
+    tabBarInactiveTintColor: theme.colors.text.primary,
     tabBarLabelStyle: styles(theme).tabBarLabelStyle,
     tabBarStyle: styles(theme).tabBarStyle,
     tabBarAllowFontScaling: true,

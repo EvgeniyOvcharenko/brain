@@ -25,6 +25,7 @@ export const lightColors: IMyTheme["colors"] = {
     primary: themeColors.black,
     secondary: themeColors.darkGrey,
     disabled: themeColors.grey,
+    reverse: themeColors.white,
   },
   button: {
     primary: themeColors.black,//
@@ -52,6 +53,7 @@ export const darkColors: IMyTheme["colors"] = {
     primary: themeColors.white,
     secondary: themeColors.lightGrey,
     disabled: themeColors.grey,
+    reverse: themeColors.black,
   },
   button: {
     primary: themeColors.white,//

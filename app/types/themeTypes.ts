@@ -6,20 +6,21 @@ export enum ThemeType {
 export interface IMyTheme {
   colors: {
     text: {
-      primary: string;
-      secondary: string;
       disabled: string;
+      primary: string;
+      reverse: string;
+      secondary: string;
     };
     button: {
+      blue: string;
+      disabled: string;
       primary: string;
       secondary: string;
-      disabled: string;
       white: string;
-      blue: string;
     };
     layout: {
-      page: string;
       card: string;
+      page: string;
     };
     border: {
       border1: string;
