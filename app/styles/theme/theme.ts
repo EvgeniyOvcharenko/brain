@@ -78,8 +78,8 @@ export const darkColors: DefaultTheme["colors"] = {
 };
 
 const letterSpacing: DefaultTheme["letterSpacings"] = (
-  fontSize,
-  percentage
+  fontSize: number,
+  percentage: number
 ) => {
   return fontSize * percentage;
 };

@@ -11,14 +11,17 @@ import { Shimmer } from "./components/shimmer/shimmer";
 import { MainRoutes } from "./navigation/home.routes";
 import { IThemeContext, ThemePreferenceContext } from "./styles/theme/hooks";
 import { DarkTheme, WhiteTheme } from "./styles/theme/navigationTheme";
-import { themeApp, themeColors } from "./styles/theme/theme";
+import { themeApp } from "./styles/theme/theme";
 import { ThemeType } from "./types/themeTypes";
 
 type ICurrentTheme = IThemeContext["currentTheme"];
+const Stack = createNativeStackNavigator();
+
 export const App = () => {
   const [currentTheme, setCurrentTheme] = useState<ICurrentTheme>(
     ThemeType.LIGHT
   );
+  const theme = themeApp[currentTheme];
 
   useEffect(() => {
     initStatusBar();
@@ -41,12 +44,10 @@ export const App = () => {
     });
   };
 
-  const Stack = createNativeStackNavigator();
-
   return (
     <SafeAreaProvider>
       <ThemePreferenceContext.Provider value={{ currentTheme, toggleTheme }}>
-        <ThemeProvider theme={themeApp[currentTheme]}>
+        <ThemeProvider theme={theme}>
           <NavigationContainer
             theme={currentTheme === ThemeType.LIGHT ? WhiteTheme : DarkTheme}
           >
@@ -58,7 +59,11 @@ export const App = () => {
                 },
                 headerTitle: () => {
                   return (
-                    <Icon name="logoBrain" size={36} color={themeColors.blue} />
+                    <Icon
+                      name="logoBrain"
+                      size={36}
+                      color={theme.colors.button.blue}
+                    />
                   );
                 },
               }}
