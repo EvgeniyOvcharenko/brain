@@ -10,7 +10,7 @@ export const LevelsHome: FC<HomeStackProps> = ({ navigation }) => {
   };
   return (
     <View>
-      <TextElement>{locales.TAB_HOME_TITLE}</TextElement>
+      <TextElement>{locales('TAB_LEVELS_TITLE')}</TextElement>
       <Button
         title="Back to Brain"
         onPress={onPress}

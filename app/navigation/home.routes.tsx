@@ -8,6 +8,7 @@ import { SettingsHome } from "../containers/home/settingsHome";
 import { homeTabBarOptions } from "./headerOptions";
 import { LevelsHome } from "../containers/home/levelsHome";
 import { useTheme } from "styled-components/native";
+import { locales } from "../locales/localization";
 
 type HomeRoutesParams = {
   GameHome: undefined;
@@ -29,21 +30,21 @@ export const MainRoutes = () => {
         name="SettingsHome"
         component={SettingsHome}
         options={{
-          title: "Settings",
+          title: locales('TAB_SETTINGS_TITLE'),
         }}
       />
       <HomeStack.Screen
         name="GameHome"
         component={GameHome}
         options={{
-          title: "Game",
+          title: locales('TAB_GAME_TITLE'),
         }}
       />
       <HomeStack.Screen
         name="LevelsHome"
         component={LevelsHome}
         options={{
-          title: "Levels",
+          title: locales('TAB_LEVELS_TITLE'),
         }}
       />
     </HomeStack.Navigator>

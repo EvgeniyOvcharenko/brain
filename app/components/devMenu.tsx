@@ -9,12 +9,10 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { themeColors } from "../styles/theme/theme";
-import { useGetCustomTheme } from "../styles/theme/hooks";
-import { ThemeType } from "../types/themeTypes";
-import { locales } from "../locales/localization";
-import { AppLanguages } from "../locales/constants";
 import { useTheme } from "styled-components";
+import { useGetCustomTheme } from "../styles/theme/hooks";
+import { themeColors } from "../styles/theme/theme";
+import { ThemeType } from "../types/themeTypes";
 
 const CONTENT_WIDTH = 235;
 const SID_BUTTON_WIDTH = 18;
@@ -22,7 +20,7 @@ const BORDER_RADIUS = 10;
 
 const DevMenu: FC = () => {
   if (!__DEV__) return null;
-  const { currentTheme, toggleTheme } = useGetCustomTheme();
+  const { currentTheme, toggleTheme, toggleLocale } = useGetCustomTheme();
   const animValue = React.useRef(new Animated.ValueXY({ x: 0, y: 0 })).current;
   const [isOpen, setIsOpen] = useState(false);
   const theme = useTheme();
@@ -43,9 +41,7 @@ const DevMenu: FC = () => {
   };
 
   const onChangeLanguage = () => {
-    const isEn = locales.getLanguage() === AppLanguages.EN;
-    locales.setLanguage(isEn ? AppLanguages.UA : AppLanguages.EN);
-    setIsOpen(true);
+    toggleLocale?.();
   };
 
   const renderButton = (action: () => void, text: string) => {

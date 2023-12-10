@@ -1,4 +1,5 @@
 export enum LocalesUa {
-  TAB_HOME_TITLE = 'Головна',
-  TAB_BAR_PAYMENT = 'Платіж',
+  TAB_SETTINGS_TITLE = 'Налаштування',
+  TAB_GAME_TITLE = 'Гра',
+  TAB_LEVELS_TITLE = 'Рівні',
 }

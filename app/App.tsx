@@ -1,52 +1,48 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import React, { useEffect, useState } from "react";
-import { Platform, StatusBar } from "react-native";
+import { useAtom } from "jotai";
+import React from "react";
 import "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { ThemeProvider } from "styled-components/native";
+import { appThemeAtom, appLocaleAtom } from "./atom/appAtom";
 import DevMenu from "./components/devMenu";
 import { Icon } from "./components/icon/icon";
 import { Shimmer } from "./components/shimmer/shimmer";
+import { useInitStatusBar } from "./core/initStatusBar";
+import { AppLanguages } from "./locales/constants";
 import { MainRoutes } from "./navigation/home.routes";
-import { IThemeContext, ThemePreferenceContext } from "./styles/theme/hooks";
+import { ThemePreferenceContext } from "./styles/theme/hooks";
 import { DarkTheme, WhiteTheme } from "./styles/theme/navigationTheme";
 import { themeApp } from "./styles/theme/theme";
 import { ThemeType } from "./types/themeTypes";
 
-type ICurrentTheme = IThemeContext["currentTheme"];
 const Stack = createNativeStackNavigator();
 
 export const App = () => {
-  const [currentTheme, setCurrentTheme] = useState<ICurrentTheme>(
-    ThemeType.LIGHT
-  );
+  const [localeApp, setLocaleApp] = useAtom(appLocaleAtom);
+  const [currentTheme, setCurrentTheme] = useAtom(appThemeAtom);
   const theme = themeApp[currentTheme];
 
-  useEffect(() => {
-    initStatusBar();
-  }, [currentTheme]);
-
-  const initStatusBar = () => {
-    StatusBar.setHidden(false);
-    StatusBar.setBarStyle(
-      currentTheme === ThemeType.DARK ? "light-content" : "dark-content"
-    );
-    if (Platform.OS === "android") {
-      StatusBar.setBackgroundColor("transparent");
-      StatusBar.setTranslucent(true);
-    }
-  };
+  useInitStatusBar();
 
   const toggleTheme = () => {
-    setCurrentTheme((state: ICurrentTheme): ICurrentTheme => {
-      return state === ThemeType.LIGHT ? ThemeType.DARK : ThemeType.LIGHT;
-    });
+    setCurrentTheme(
+      currentTheme === ThemeType.LIGHT ? ThemeType.DARK : ThemeType.LIGHT
+    );
+  };
+
+  const toggleLocale = () => {
+    setLocaleApp(
+      localeApp === AppLanguages.EN ? AppLanguages.UA : AppLanguages.EN
+    );
   };
 
   return (
     <SafeAreaProvider>
-      <ThemePreferenceContext.Provider value={{ currentTheme, toggleTheme }}>
+      <ThemePreferenceContext.Provider
+        value={{ currentTheme, toggleTheme, localeApp, toggleLocale }}
+      >
         <ThemeProvider theme={theme}>
           <NavigationContainer
             theme={currentTheme === ThemeType.LIGHT ? WhiteTheme : DarkTheme}
