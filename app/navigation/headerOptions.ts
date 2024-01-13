@@ -5,11 +5,12 @@ import { DefaultTheme } from "styled-components/native";
 const styles = (theme: DefaultTheme) =>
   StyleSheet.create({
     tabBarLabelStyle: {
-      fontSize: 12,
+      fontSize: 9,
       fontFamily: "Georgia-bold",
     },
     tabBarStyle: {
       backgroundColor: theme.colors.shimmer.first,
+      paddingVertical: 4,
     },
     tabBarIndicatorStyle: {
       height: 0,
@@ -18,10 +19,10 @@ const styles = (theme: DefaultTheme) =>
       borderRadius: 24,
       borderBottomLeftRadius: 0,
       borderTopRightRadius: 0,
-      marginHorizontal: 8,
+      marginHorizontal: 4,
       backgroundColor: theme.colors.button.blue,
       borderLeftColor: theme.colors.button.primary,
-      borderLeftWidth: 3,
+      borderLeftWidth: 4,
     },
   });
 
@@ -37,7 +38,9 @@ export const homeTabBarOptions = (
     tabBarAllowFontScaling: true,
     tabBarIndicatorStyle: styles(theme).tabBarIndicatorStyle,
     swipeEnabled: true,
-    tabBarGap: 5,
+    tabBarGap: 0,
     tabBarItemStyle: styles(theme).tabBarItemStyle,
+    tabBarIndicatorContainerStyle: {
+    },
   };
 };

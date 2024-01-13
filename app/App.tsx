@@ -5,24 +5,23 @@ import React from "react";
 import "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { ThemeProvider } from "styled-components/native";
-import { appThemeAtom, appLocaleAtom } from "./atom/appAtom";
+import { appLocaleAtom, appThemeAtom } from "./atom/appAtom";
 import DevMenu from "./components/devMenu";
 import { Icon } from "./components/icon/icon";
-import { Shimmer } from "./components/shimmer/shimmer";
 import { useInitStatusBar } from "./core/initStatusBar";
 import { AppLanguages } from "./locales/constants";
 import { MainRoutes } from "./navigation/home.routes";
 import { ThemePreferenceContext } from "./styles/theme/hooks";
 import { DarkTheme, WhiteTheme } from "./styles/theme/navigationTheme";
 import { themeApp } from "./styles/theme/theme";
-import { ThemeType } from "./types/themeTypes";
+import { IMyTheme, ThemeType } from "./types/themeTypes";
 
 const Stack = createNativeStackNavigator();
 
 export const App = () => {
   const [localeApp, setLocaleApp] = useAtom(appLocaleAtom);
   const [currentTheme, setCurrentTheme] = useAtom(appThemeAtom);
-  const theme = themeApp[currentTheme];
+  const theme: IMyTheme = themeApp[currentTheme];
 
   useInitStatusBar();
 
@@ -50,8 +49,8 @@ export const App = () => {
             <Stack.Navigator
               screenOptions={{
                 headerShadowVisible: false,
-                headerBackground: () => {
-                  return <Shimmer />;
+                headerStyle: {
+                  backgroundColor: theme.colors.shimmer.first,
                 },
                 headerTitle: () => {
                   return (
