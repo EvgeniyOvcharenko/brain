@@ -1,8 +1,8 @@
-import { useAtom } from "jotai";
-import { appLocaleAtom } from "../atom/appAtom";
-import { AppLanguages } from "./constants";
-import { LocalesEn } from "./globalEn";
-import { LocalesUa } from "./globalUa";
+import { useAtom } from 'jotai';
+import { appLocaleAtom } from '../atom/appAtom';
+import { AppLanguages } from './constants';
+import { LocalesEn } from './globalEn';
+import { LocalesUa } from './globalUa';
 
 type LocalesType = keyof typeof LocalesUa | keyof typeof LocalesEn;
 

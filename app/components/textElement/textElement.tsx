@@ -1,9 +1,9 @@
-import { TextProps } from "react-native";
-import styled, { DefaultTheme, css } from "styled-components/native";
-import DeviceUiInfo from "../../core/deviceInfo";
-import { Fonts, IFontFamilyTypes } from "../../styles/fonts/text.fonts";
-import { TextColorVariants } from "../../styles/theme/theme";
-import { VARIANTS } from "./textElement.constants";
+import { TextProps } from 'react-native';
+import styled, { DefaultTheme, css } from 'styled-components/native';
+import DeviceUiInfo from '../../core/deviceInfo';
+import { Fonts, IFontFamilyTypes } from '../../styles/fonts/text.fonts';
+import { TextColorVariants } from '../../styles/theme/theme';
+import { VARIANTS } from './textElement.constants';
 
 export type TTextElementVariant = keyof typeof VARIANTS;
 
@@ -33,22 +33,14 @@ export const TextElement = styled.Text<ITextElementProps>`
     return getTextColor(props);
   }};
   ${(props: ITextElementProps) => {
-    const {
-      variant,
-      fontSize,
-      lineHeight,
-      letterSpacing,
-      fontFamily,
-      fontWeight,
-    } = props;
+    const { variant, fontSize, lineHeight, letterSpacing, fontFamily, fontWeight } = props;
     if (variant) {
       return VARIANTS[variant];
     }
     const _fontFamily = fontFamily ? fontFamily : Fonts.REGULAR;
-    const _fontSize = DeviceUiInfo.moderateScale(fontSize || 16) + "px";
-    const _letterSpacing =
-      DeviceUiInfo.moderateScale(letterSpacing || 0) + "px";
-    const _lineHeight = DeviceUiInfo.moderateScale(lineHeight || 24) + "px";
+    const _fontSize = DeviceUiInfo.moderateScale(fontSize || 16) + 'px';
+    const _letterSpacing = DeviceUiInfo.moderateScale(letterSpacing || 0) + 'px';
+    const _lineHeight = DeviceUiInfo.moderateScale(lineHeight || 24) + 'px';
 
     return css`
       font-family: ${_fontFamily};
@@ -70,9 +62,5 @@ const getTextColor = (props: {
   if (disabled) {
     return theme.colors.text.disabled;
   }
-  return (
-    color ||
-    (colorVariant && theme.colors.text[colorVariant]) ||
-    theme.colors.text.primary
-  );
+  return color || (colorVariant && theme.colors.text[colorVariant]) || theme.colors.text.primary;
 };

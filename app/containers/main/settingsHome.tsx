@@ -5,7 +5,7 @@ import { HomeStackProps } from '../../navigation/home.routes';
 export const SettingsHome: FC<HomeStackProps> = ({ navigation }) => {
   return (
     <View>
-      <Button title="Back to Brain" onPress={() => navigation.navigate('GameHome')} />
+      <Button title='Back to Brain' onPress={() => navigation.navigate('GameHome')} />
     </View>
   );
 };

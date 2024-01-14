@@ -1,12 +1,12 @@
-import { MaterialTopTabNavigationOptions } from "@react-navigation/material-top-tabs";
-import { StyleSheet } from "react-native";
-import { DefaultTheme } from "styled-components/native";
+import { MaterialTopTabNavigationOptions } from '@react-navigation/material-top-tabs';
+import { StyleSheet } from 'react-native';
+import { DefaultTheme } from 'styled-components/native';
 
 const styles = (theme: DefaultTheme) =>
   StyleSheet.create({
     tabBarLabelStyle: {
       fontSize: 9,
-      fontFamily: "Georgia-bold",
+      fontFamily: 'Georgia-bold',
     },
     tabBarStyle: {
       backgroundColor: theme.colors.shimmer.first,
@@ -26,9 +26,7 @@ const styles = (theme: DefaultTheme) =>
     },
   });
 
-export const homeTabBarOptions = (
-  theme: DefaultTheme
-): MaterialTopTabNavigationOptions => {
+export const homeTabBarOptions = (theme: DefaultTheme): MaterialTopTabNavigationOptions => {
   return {
     tabBarActiveTintColor: theme.colors.text.reverse,
     tabBarPressOpacity: 0.8,
@@ -40,7 +38,6 @@ export const homeTabBarOptions = (
     swipeEnabled: true,
     tabBarGap: 0,
     tabBarItemStyle: styles(theme).tabBarItemStyle,
-    tabBarIndicatorContainerStyle: {
-    },
+    tabBarIndicatorContainerStyle: {},
   };
 };

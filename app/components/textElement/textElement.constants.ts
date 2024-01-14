@@ -1,24 +1,24 @@
-import { Platform } from "react-native";
-import { css } from "styled-components/native";
-import DeviceUiInfo from "../../core/deviceInfo";
-import { Fonts } from "../../styles/fonts/text.fonts";
+import { Platform } from 'react-native';
+import { css } from 'styled-components/native';
+import DeviceUiInfo from '../../core/deviceInfo';
+import { Fonts } from '../../styles/fonts/text.fonts';
 
 const BUTTON_TEXT_VARIANTS = {
-  "button-xxs": css`
+  'button-xxs': css`
     font-family: ${Fonts.REGULAR};
     font-size: ${DeviceUiInfo.moderateScale(11)}px;
     line-height: ${`${DeviceUiInfo.moderateScale(11)}px`};
     font-weight: 500;
     letter-spacing: 0;
   `,
-  "button-xs": css`
+  'button-xs': css`
     font-family: ${Fonts.REGULAR};
     font-size: ${DeviceUiInfo.moderateScale(12)}px;
     line-height: ${`${DeviceUiInfo.moderateScale(12)}px`};
     font-weight: 500;
     letter-spacing: 0;
   `,
-  "button-small": css`
+  'button-small': css`
     font-family: ${Fonts.REGULAR};
     font-size: ${DeviceUiInfo.moderateScale(14)}px;
     line-height: ${`${DeviceUiInfo.moderateScale(14)}px`};
@@ -35,42 +35,42 @@ const BUTTON_TEXT_VARIANTS = {
 };
 
 export const AMOUNT_TEXT_VARIANTS = {
-  "amount-s": css`
+  'amount-s': css`
     font-family: ${(props) => props.theme.fonts.amountMedium};
     font-size: ${DeviceUiInfo.moderateScale(16)}px;
     line-height: ${DeviceUiInfo.moderateScale(20)}px;
     font-weight: 500;
     letter-spacing: ${DeviceUiInfo.moderateScale(16)}px;
   `,
-  "amount-m": css`
+  'amount-m': css`
     font-family: ${(props) => props.theme.fonts.amountMedium};
     font-size: ${DeviceUiInfo.moderateScale(18)}px;
     line-height: ${DeviceUiInfo.moderateScale(24)}px;
     font-weight: 500;
     letter-spacing: ${DeviceUiInfo.moderateScale(18)}px;
   `,
-  "amount-l": css`
+  'amount-l': css`
     font-family: ${(props) => props.theme.fonts.amountMedium};
     font-size: ${DeviceUiInfo.moderateScale(28)}px;
     line-height: ${DeviceUiInfo.moderateScale(40)}px;
     font-weight: 500;
     letter-spacing: ${DeviceUiInfo.moderateScale(28)}px;
   `,
-  "amount-xl": css`
+  'amount-xl': css`
     font-family: ${(props) => props.theme.fonts.amountMedium};
     font-size: ${DeviceUiInfo.moderateScale(32)}px;
     line-height: ${DeviceUiInfo.moderateScale(40)}px;
     font-weight: 500;
     letter-spacing: ${DeviceUiInfo.moderateScale(32)}px;
   `,
-  "amount-xxl": css`
+  'amount-xxl': css`
     font-family: ${(props) => props.theme.fonts.amountMedium};
     font-size: ${DeviceUiInfo.moderateScale(36)}px;
     line-height: ${DeviceUiInfo.moderateScale(48)}px;
     font-weight: 500;
     letter-spacing: ${DeviceUiInfo.moderateScale(36)}px;
   `,
-  "amount-xxxl": css`
+  'amount-xxxl': css`
     font-family: ${(props) => props.theme.fonts.amountMedium};
     font-size: ${DeviceUiInfo.moderateScale(48)}px;
     line-height: ${DeviceUiInfo.moderateScale(56)}px;
@@ -80,28 +80,28 @@ export const AMOUNT_TEXT_VARIANTS = {
 };
 
 export const VARIANTS = {
-  "paragraph-xs": css`
+  'paragraph-xs': css`
     font-family: ${Fonts.REGULAR};
     font-size: ${DeviceUiInfo.moderateScale(12)}px;
     line-height: ${DeviceUiInfo.moderateScale(16)}px;
     font-weight: 400;
     letter-spacing: 0;
   `,
-  "paragraph-xs-medium": css`
+  'paragraph-xs-medium': css`
     font-family: ${Fonts.REGULAR};
     font-size: ${DeviceUiInfo.moderateScale(12)}px;
     line-height: ${DeviceUiInfo.moderateScale(16)}px;
     font-weight: 500;
     letter-spacing: 0;
   `,
-  "paragraph-small": css`
+  'paragraph-small': css`
     font-family: ${Fonts.REGULAR};
     font-size: ${DeviceUiInfo.moderateScale(14)}px;
     line-height: ${DeviceUiInfo.moderateScale(24)}px;
     font-weight: 400;
     letter-spacing: 0;
   `,
-  "paragraph-small-medium": css`
+  'paragraph-small-medium': css`
     font-family: ${Fonts.REGULAR};
     font-size: ${DeviceUiInfo.moderateScale(14)}px;
     line-height: ${DeviceUiInfo.moderateScale(24)}px;
@@ -115,20 +115,20 @@ export const VARIANTS = {
     font-weight: 400;
     letter-spacing: 0;
   `,
-  "paragraph-medium": css`
+  'paragraph-medium': css`
     font-family: ${Fonts.REGULAR};
     font-size: ${DeviceUiInfo.moderateScale(16)}px;
     line-height: ${DeviceUiInfo.moderateScale(24)}px;
     font-weight: 500;
     letter-spacing: 0;
   `,
-  "paragraph-large": css`
+  'paragraph-large': css`
     font-family: ${Fonts.REGULAR};
     font-size: ${DeviceUiInfo.moderateScale(18)}px;
     line-height: ${DeviceUiInfo.moderateScale(24)}px;
     font-weight: 400;
   `,
-  "paragraph-large-medium": css`
+  'paragraph-large-medium': css`
     font-family: ${Fonts.REGULAR};
     font-size: ${DeviceUiInfo.moderateScale(18)}px;
     line-height: ${DeviceUiInfo.moderateScale(24)}px;
@@ -141,14 +141,14 @@ export const VARIANTS = {
     font-weight: 500;
     letter-spacing: ${DeviceUiInfo.moderateScale(12) * 0.02}px;
   `,
-  "micro-xs": css`
+  'micro-xs': css`
     font-family: ${Fonts.REGULAR};
     font-size: ${DeviceUiInfo.moderateScale(12)}px;
     line-height: ${DeviceUiInfo.moderateScale(16)}px;
     font-weight: 400;
     letter-spacing: 0;
   `,
-  "micro-xs-med": css`
+  'micro-xs-med': css`
     font-family: ${Fonts.REGULAR};
     font-size: ${DeviceUiInfo.moderateScale(12)}px;
     line-height: ${DeviceUiInfo.moderateScale(16)}px;
@@ -187,7 +187,7 @@ export const VARIANTS = {
     font-family: ${Fonts.BOLD};
     font-size: ${DeviceUiInfo.moderateScale(14)}px;
     line-height: ${DeviceUiInfo.moderateScale(24)}px;
-    font-weight: ${Platform.OS === "ios" ? 700 : 600};
+    font-weight: ${Platform.OS === 'ios' ? 700 : 600};
     letter-spacing: 0;
   `,
   mono: css`

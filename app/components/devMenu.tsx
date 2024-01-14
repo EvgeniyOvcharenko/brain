@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useState } from 'react';
 import {
   Alert,
   Animated,
@@ -8,11 +8,11 @@ import {
   Text,
   TouchableOpacity,
   View,
-} from "react-native";
-import { useTheme } from "styled-components";
-import { useGetCustomTheme } from "../styles/theme/hooks";
-import { themeColors } from "../styles/theme/theme";
-import { ThemeType } from "../types/themeTypes";
+} from 'react-native';
+import { useTheme } from 'styled-components';
+import { useGetCustomTheme } from '../styles/theme/hooks';
+import { themeColors } from '../styles/theme/theme';
+import { ThemeType } from '../types/themeTypes';
 
 const CONTENT_WIDTH = 235;
 const SID_BUTTON_WIDTH = 18;
@@ -37,7 +37,7 @@ const DevMenu: FC = () => {
   };
 
   const hello = () => {
-    Alert.alert("Hello");
+    Alert.alert('Hello');
   };
 
   const onChangeLanguage = () => {
@@ -48,7 +48,7 @@ const DevMenu: FC = () => {
     return (
       <TouchableOpacity
         style={{
-          borderColor: "red",
+          borderColor: 'red',
           borderWidth: 2,
           padding: 10,
           backgroundColor: theme.colors.button.blue,
@@ -68,21 +68,9 @@ const DevMenu: FC = () => {
         { transform: [{ translateX: animValue.x }] },
       ]}
     >
-      <View
-        style={[
-          styles.contentBox,
-          isRTL ? styles.contentBoxRTL : styles.contentBoxLTR,
-        ]}
-      >
-        <View
-          style={[
-            styles.switch,
-            { flexDirection: isRTL ? "row-reverse" : "row" },
-          ]}
-        >
-          <Text
-            style={{ color: isDark ? themeColors.white : themeColors.darkGrey }}
-          >
+      <View style={[styles.contentBox, isRTL ? styles.contentBoxRTL : styles.contentBoxLTR]}>
+        <View style={[styles.switch, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
+          <Text style={{ color: isDark ? themeColors.white : themeColors.darkGrey }}>
             {currentTheme.toUpperCase()}
           </Text>
           <Switch
@@ -92,14 +80,11 @@ const DevMenu: FC = () => {
             onValueChange={toggleTheme}
           />
         </View>
-        {renderButton(hello, "Click me")}
-        {renderButton(onChangeLanguage, "Change language")}
+        {renderButton(hello, 'Click me')}
+        {renderButton(onChangeLanguage, 'Change language')}
       </View>
       <TouchableOpacity
-        style={[
-          styles.sidButton,
-          isRTL ? styles.sidButtonRTL : styles.sidButtonLTR,
-        ]}
+        style={[styles.sidButton, isRTL ? styles.sidButtonRTL : styles.sidButtonLTR]}
         onPress={toggle}
       />
     </Animated.View>
@@ -108,7 +93,7 @@ const DevMenu: FC = () => {
 
 const styles = StyleSheet.create({
   container: {
-    position: "absolute",
+    position: 'absolute',
     width: CONTENT_WIDTH + SID_BUTTON_WIDTH,
     bottom: 94,
   },
@@ -121,11 +106,11 @@ const styles = StyleSheet.create({
     paddingLeft: SID_BUTTON_WIDTH,
   },
   contentBox: {
-    justifyContent: "space-between",
+    justifyContent: 'space-between',
     paddingHorizontal: 20,
     paddingVertical: 10,
     borderWidth: 1,
-    borderColor: "red",
+    borderColor: 'red',
   },
   contentBoxLTR: {
     borderLeftWidth: 0,
@@ -136,20 +121,20 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: BORDER_RADIUS,
   },
   switch: {
-    justifyContent: "space-between",
-    alignItems: "center",
+    justifyContent: 'space-between',
+    alignItems: 'center',
     marginVertical: 10,
   },
   button: {
-    justifyContent: "center",
+    justifyContent: 'center',
     marginVertical: 10,
   },
   sidButton: {
-    position: "absolute",
+    position: 'absolute',
     width: SID_BUTTON_WIDTH,
     height: SID_BUTTON_WIDTH * 4,
     bottom: 0,
-    backgroundColor: "red",
+    backgroundColor: 'red',
   },
   sidButtonLTR: {
     left: CONTENT_WIDTH,
