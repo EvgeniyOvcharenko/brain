@@ -1,36 +1,36 @@
 import {
   MaterialTopTabScreenProps,
   createMaterialTopTabNavigator,
-} from "@react-navigation/material-top-tabs";
-import React from "react";
-import { GameHome } from "../containers/home/gameHome";
-import { SettingsHome } from "../containers/home/settingsHome";
-import { homeTabBarOptions } from "./headerOptions";
-import { LevelsHome } from "../containers/home/levelsHome";
-import { useTheme } from "styled-components/native";
-import { locales } from "../locales/localization";
+} from '@react-navigation/material-top-tabs';
+import React from 'react';
+import { GameHome } from '../containers/main/gameHome';
+import { SettingsHome } from '../containers/main/settingsHome';
+import { homeTabBarOptions } from './headerOptions';
+import { LevelsHome } from '../containers/main/levelsHome';
+import { useTheme } from 'styled-components/native';
+import { locales } from '../locales/localization';
 
-type HomeRoutesParams = {
+type THomeRoutesParams = {
   GameHome: undefined;
   SettingsHome: undefined;
   LevelsHome: undefined;
 };
 
-const HomeStack = createMaterialTopTabNavigator<HomeRoutesParams>();
+const HomeStack = createMaterialTopTabNavigator<THomeRoutesParams>();
 
-export type HomeStackProps = MaterialTopTabScreenProps<HomeRoutesParams>;
+export type HomeStackProps = MaterialTopTabScreenProps<THomeRoutesParams>;
 export const MainRoutes = () => {
   const theme = useTheme();
   return (
     <HomeStack.Navigator
       initialRouteName="GameHome"
-      screenOptions={{...homeTabBarOptions(theme)}}
+      screenOptions={{ ...homeTabBarOptions(theme) }}
     >
       <HomeStack.Screen
-        name="SettingsHome"
-        component={SettingsHome}
+        name="LevelsHome"
+        component={LevelsHome}
         options={{
-          title: locales('TAB_SETTINGS_TITLE'),
+          title: locales('TAB_LEVELS_TITLE'),
         }}
       />
       <HomeStack.Screen
@@ -41,10 +41,10 @@ export const MainRoutes = () => {
         }}
       />
       <HomeStack.Screen
-        name="LevelsHome"
-        component={LevelsHome}
+        name="SettingsHome"
+        component={SettingsHome}
         options={{
-          title: locales('TAB_LEVELS_TITLE'),
+          title: locales('TAB_SETTINGS_TITLE'),
         }}
       />
     </HomeStack.Navigator>
